@@ -2,16 +2,16 @@
 
 ## Introduction:
 
-This project presents a few implementations of the multi objective problem: Knapsack 0/1.
+This project presents a few implementations of the multi objective problem: Knapsack 0/1. 
 
-The approches are:
-1. Brute Force
-2. Branch and Bound
-3. Hill Climbing
+The approaches are: 
+1. Brute Force 
+2. Branch and Bound 
+3. Hill Climbing 
 
-In each implementation the output contatins the list of chosen items, total weight, total value and duration.
+In each implementation the output contains the list of chosen items, total weight, total value, and duration. 
 
-In our project we investigated the diffrences between the approches and present the advantages and disadvanteges of them, as you can see at the following graph below:
+In our project we investigated the differences between the approaches and present the advantages and disadvantages of them, as you can see at the following graph below:
 
 ![uml](
 https://i.postimg.cc/ZRtstrD3/Screenshot-2022-02-20-113847.png

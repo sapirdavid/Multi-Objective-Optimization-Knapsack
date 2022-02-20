@@ -1,6 +1,6 @@
 # Multi Objective Optimization - Knapsack 0/1
 
-**Introduction:**
+## Introduction:
 
 This project presents a few implementations of the multi objective problem: Knapsack 0/1.
 
@@ -11,7 +11,11 @@ The approches are:
 
 In each implementation the output contatins the list of chosen items, total weight, total value and duration.
 
-In our project we investigated the diffrences between the approches and present the advantages and disadvanteges of them.
+In our project we investigated the diffrences between the approches and present the advantages and disadvanteges of them, as you can see at the following graph below:
+
+![uml](
+https://i.postimg.cc/ZRtstrD3/Screenshot-2022-02-20-113847.png
+)
 
 
 

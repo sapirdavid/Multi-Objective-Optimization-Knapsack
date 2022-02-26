@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f97cc47-d4d7-4ea9-b6f0-e09bfbcd6c79" name="Default Changelist" comment="" />
+    <list default="true" id="2f97cc47-d4d7-4ea9-b6f0-e09bfbcd6c79" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BranchAndBound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BranchAndBound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BruteForce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BruteForce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HillClimbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HillClimbing.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +20,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="25KGnRNXdYhlHNeKoNtdeGiaTqR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,6 +32,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -33,7 +44,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BranchAndBound">
+  <component name="RunManager" selected="Application.HillClimbing">
     <configuration name="BranchAndBound$KnapsackDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BranchAndBound$KnapsackDriver" />
       <module name="MultiObjectiveOptimizationKnapsack" />
@@ -64,8 +75,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BranchAndBound" />
         <item itemvalue="Application.HillClimbing" />
+        <item itemvalue="Application.BranchAndBound" />
         <item itemvalue="Application.BruteForce" />
         <item itemvalue="Application.BranchAndBound$KnapsackDriver" />
       </list>
@@ -97,33 +108,33 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="394" y="205" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1645268683313" />
-    <state width="1380" height="311" key="GridCell.Tab.0.bottom" timestamp="1645348141680">
+    <state width="1380" height="378" key="GridCell.Tab.0.bottom" timestamp="1645868739789">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1380" height="317" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1645295852665" />
     <state width="1380" height="248" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.25.1920.1055@0.0.1440.900" timestamp="1645280290190" />
-    <state width="1380" height="311" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1645348141680" />
+    <state width="1380" height="378" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1645868739789" />
     <state width="1380" height="345" key="GridCell.Tab.0.bottom/0.25.1440.802@0.25.1440.802" timestamp="1645345968997" />
-    <state width="1380" height="311" key="GridCell.Tab.0.center" timestamp="1645348141679">
+    <state width="1380" height="378" key="GridCell.Tab.0.center" timestamp="1645868739785">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1380" height="317" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1645295852663" />
     <state width="1380" height="248" key="GridCell.Tab.0.center/0.0.1440.900/1440.25.1920.1055@0.0.1440.900" timestamp="1645280290188" />
-    <state width="1380" height="311" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1645348141679" />
+    <state width="1380" height="378" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1645868739785" />
     <state width="1380" height="345" key="GridCell.Tab.0.center/0.25.1440.802@0.25.1440.802" timestamp="1645345968996" />
-    <state width="1380" height="311" key="GridCell.Tab.0.left" timestamp="1645348141678">
+    <state width="1380" height="378" key="GridCell.Tab.0.left" timestamp="1645868739784">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1380" height="317" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1645295852663" />
     <state width="1380" height="248" key="GridCell.Tab.0.left/0.0.1440.900/1440.25.1920.1055@0.0.1440.900" timestamp="1645280290183" />
-    <state width="1380" height="311" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1645348141678" />
+    <state width="1380" height="378" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1645868739784" />
     <state width="1380" height="345" key="GridCell.Tab.0.left/0.25.1440.802@0.25.1440.802" timestamp="1645345968996" />
-    <state width="1380" height="311" key="GridCell.Tab.0.right" timestamp="1645348141679">
+    <state width="1380" height="378" key="GridCell.Tab.0.right" timestamp="1645868739787">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1380" height="317" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1645295852664" />
     <state width="1380" height="248" key="GridCell.Tab.0.right/0.0.1440.900/1440.25.1920.1055@0.0.1440.900" timestamp="1645280290189" />
-    <state width="1380" height="311" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1645348141679" />
+    <state width="1380" height="378" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1645868739787" />
     <state width="1380" height="345" key="GridCell.Tab.0.right/0.25.1440.802@0.25.1440.802" timestamp="1645345968997" />
     <state width="1380" height="345" key="GridCell.Tab.1.bottom" timestamp="1645345968999">
       <screen x="0" y="25" width="1440" height="802" />
@@ -145,11 +156,12 @@
     </state>
     <state width="1380" height="345" key="GridCell.Tab.1.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1645285776640" />
     <state width="1380" height="345" key="GridCell.Tab.1.right/0.25.1440.802@0.25.1440.802" timestamp="1645345968998" />
-    <state x="365" y="216" key="com.intellij.ide.util.TipDialog" timestamp="1645346121483">
-      <screen x="0" y="25" width="1440" height="802" />
+    <state x="365" y="217" key="com.intellij.ide.util.TipDialog" timestamp="1645868374533">
+      <screen x="0" y="25" width="1440" height="809" />
     </state>
     <state x="365" y="216" key="com.intellij.ide.util.TipDialog/0.25.1440.802/1440.25.1920.1055@0.25.1440.802" timestamp="1645268536608" />
     <state x="365" y="216" key="com.intellij.ide.util.TipDialog/0.25.1440.802@0.25.1440.802" timestamp="1645346121483" />
+    <state x="365" y="217" key="com.intellij.ide.util.TipDialog/0.25.1440.809@0.25.1440.809" timestamp="1645868374533" />
     <state x="301" y="0" width="838" height="1032" key="search.everywhere.popup" timestamp="1645284170945">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

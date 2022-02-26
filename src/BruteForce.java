@@ -3,7 +3,7 @@ public class BruteForce {
     private static Item[] items;
     private int numOfItems;
     private int knapsackWeight;
-    private int bestValue;
+    private float bestValue;
     private boolean bestDecision[];
     private boolean currentDecision[];
 
@@ -11,7 +11,7 @@ public class BruteForce {
         this.numOfItems = numOfItems;
         this.knapsackWeight = knapsackWeight;
 
-        bestValue = Integer.MIN_VALUE;
+        bestValue =Float.MIN_VALUE;
         bestDecision = new boolean[numOfItems];
         currentDecision = new boolean[numOfItems];
 
@@ -24,11 +24,11 @@ public class BruteForce {
         //if all items were checked
         if (numCurrItems < 0) {
             int totalWeight = 0;
-            int totalValue = 0;
+            float totalValue = 0;
             for (int i = 0; i < numOfItems; i++) {
                 if (currentDecision[i]) {
                     totalWeight += items[i].weight();
-                    totalValue += items[i].value();
+                    totalValue += (items[i].moneyValue()+items[i].artisticValue())/2;
                 }
             }
             //if we got a better solution
@@ -48,16 +48,25 @@ public class BruteForce {
 
     public void printSolution() {
         int totalWeight = 0;
-        System.out.println(" Item Weight Value");
+        float totalMoneyValue = 0;
+        float totalArtisticValue = 0;
+        float totalValues = 0;
+        System.out.println(" Item Weight MoneyValue ArtisticValue");
         for (int i = 0; i < numOfItems; i++) {
             if (bestDecision[i]) {
-                System.out.printf("%4d %5d %5d\n", i+1, items[i].weight(),
-                        items[i].value());
-                totalWeight += items[i].weight();
+                System.out.printf("%4d %5d %8d %11d\n", i+1, items[i].weight(),
+                        items[i].moneyValue(),  items[i].artisticValue());
+                totalWeight +=  items[i].weight();
+                totalMoneyValue +=items[i].moneyValue();
+                totalArtisticValue+=items[i].artisticValue();
             }
         }
-        System.out.println("Total value: "+bestValue);
+        totalValues+=totalMoneyValue+totalArtisticValue;
+        System.out.println("Total Money Value: "+totalMoneyValue);
+        System.out.println("Total Artistic Value: "+totalArtisticValue);
+        System.out.println("Total Values (combined):" +totalValues);
         System.out.println("Total weight: "+totalWeight);
+
     }
 
     //The function updates the best decision if the current is better
@@ -67,20 +76,25 @@ public class BruteForce {
     }
 
     public static class Item {
-        private int value, weight;
+        public int moneyValue;
+        public int artisticValue;
+        public int weight;
 
-        public Item(int value, int weight) {
-            this.value = value;
+        public Item(int moneyValue,int artisticValue, int weight) {
+            this.moneyValue = moneyValue;
+            this.artisticValue = artisticValue;
             this.weight = weight;
         }
-
         public int weight() { return weight; }
-        public int value() { return value; }
+        public int moneyValue() { return moneyValue; }
+        public int artisticValue() { return artisticValue; }
+
     }
 
     public static void main(String[] args) {
         long startTime = System.nanoTime();
-        int[] values = {91, 60, 61, 9, 79, 46, 19, 57, 8, 84, 58, 32, 43, 64, 98, 21, 11, 35, 78, 29};
+        int[] moneyValues = {91, 60, 61, 9, 79, 46, 19, 57, 8, 84, 58, 32, 43, 64, 98, 21, 11, 35, 78, 29};
+        int[] artisticValues = {20, 12, 17, 9, 0, 20, 19, 30, 2, 42, 30, 5, 26, 2, 53, 4, 9, 5, 60, 2};
         int[] weights = {29, 65, 71, 60, 45, 71, 22, 97, 6, 91, 1, 23, 43, 54, 11, 76, 22, 5, 2, 13};
         int numOfItems = 20;
         int knapsackWeight = 250;
@@ -88,7 +102,7 @@ public class BruteForce {
         items = new Item[numOfItems];
 
         for (int i = 0; i < numOfItems; i++) {
-            Item item = new Item(values[i], weights[i]);
+            Item item = new Item(moneyValues[i],artisticValues[i], weights[i]);
             items[i] = item;
         }
         new BruteForce(numOfItems,knapsackWeight);

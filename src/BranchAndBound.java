@@ -2,7 +2,8 @@ import java.util.*;
 
 //Branch And Bound implementation
 public class BranchAndBound {
-    private int numOfItems, knapsackWeight, maxVal, weight;
+    private int numOfItems, knapsackWeight, weight;
+    private float maxVal;
     private Item[] items;
     private boolean[] bestDecision;
     private PriorityQueue<Node> pq;
@@ -11,7 +12,7 @@ public class BranchAndBound {
     public class Node implements Comparable<Node> {
         boolean[] decision;
         int totalWeight;
-        int totalValue;
+        float totalValue;
         int index;
         float upperBound;
 
@@ -46,7 +47,8 @@ public class BranchAndBound {
         root = new Node();
         root.totalWeight = 0;
         root.totalValue = 0;
-        float rootRatio = (float)this.items[1].value / (float)this.items[1].weight;
+        float combinedValue=(this.items[1].moneyValue+this.items[1].artisticValue)/2;
+        float rootRatio = combinedValue / (float)this.items[1].weight;
         root.upperBound = knapsackWeight * rootRatio;
         root.index = 0;
         pq.add(root);
@@ -64,11 +66,13 @@ public class BranchAndBound {
             i = node.index + 1;
             while(totalWeight <= knapsackWeight && i < numOfItems + 1) {
                 totalWeight += items[i].weight;
-                upperBound += items[i].value;
+                float combinedValue=(this.items[i].moneyValue+this.items[i].artisticValue)/2;
+                upperBound +=combinedValue;
                 i++;
             }
             if (i < numOfItems + 1) {
-                float ratio = (float) items[i].value / (float) items[i].weight;
+                float combinedValue=(this.items[i].moneyValue+this.items[i].artisticValue)/2;
+                float ratio = combinedValue / (float) items[i].weight;
                 float diffWeight = knapsackWeight - totalWeight;
                 upperBound += diffWeight * ratio;
             }
@@ -106,7 +110,7 @@ public class BranchAndBound {
                 left = new Node();
                 left.index = curr.index + 1;
                 left.totalWeight = curr.totalWeight + items[left.index].weight;
-                left.totalValue = curr.totalValue + items[left.index].value;
+                left.totalValue = curr.totalValue + ((items[left.index].moneyValue +items[left.index].artisticValue)/2) ;
                 left.decision = addDecision(curr.decision, left.decision, left.index);
                 left.upperBound = bound(left);
 
@@ -135,18 +139,26 @@ public class BranchAndBound {
 
     public void printSolution() {
         int totalWeight = 0;
-        int totalValue = 0;
-        System.out.println(" Item Weight Value");
+        float totalMoneyValue = 0;
+        float totalArtisticValue = 0;
+        float totalValues = 0;
+
+        System.out.println(" Item Weight MoneyValue ArtisticValue");
         for (int i = 1; i < bestDecision.length; i++) {
             if(bestDecision[i]) {
                 int index = items[i].index;
-                System.out.printf("%4d %5d %5d\n", index+1, items[i].weight,
-                        items[i].value);
+                System.out.printf("%4d %5d %8d %10d\n", index+1, items[i].weight,
+                        items[i].moneyValue, items[i].artisticValue);
                 totalWeight += items[i].weight;
-                totalValue += items[i].value;
+                totalMoneyValue +=items[i].moneyValue;
+                totalArtisticValue+=items[i].artisticValue;
+
             }
         }
-        System.out.println("Total value: "+totalValue);
+        totalValues+=totalMoneyValue+totalArtisticValue;
+        System.out.println("Total Money Value: "+totalMoneyValue);
+        System.out.println("Total Artistic Value: "+totalArtisticValue);
+        System.out.println("Total Values (combined):" +totalValues);
         System.out.println("Total weight: "+totalWeight);
     }
 
@@ -155,13 +167,14 @@ public class BranchAndBound {
         BranchAndBound branchAndBound;
         ArrayList<Item> items = new ArrayList<Item>();
 
-        int[] values = {91, 60, 61, 9, 79, 46, 19, 57, 8, 84, 58, 32, 43, 64, 98, 21, 11, 35, 78, 29};
+        int[] moneyValues = {91, 60, 61, 9, 79, 46, 19, 57, 8, 84, 58, 32, 43, 64, 98, 21, 11, 35, 78, 29};
+        int[] artisticValues = {20, 12, 17, 9, 0, 20, 19, 30, 2, 42, 30, 5, 26, 2, 53, 4, 9, 5, 60, 2};
         int[] weights = {29, 65, 71, 60, 45, 71, 22, 97, 6, 91, 1, 23, 43, 54, 11, 76, 22, 5, 2, 13};
         int numOfItems = 20;
         int knapsackWeight = 250;
 
         for (int i = 0; i < numOfItems; i++) {
-            Item item = new Item(i + 1, values[i], weights[i]);
+            Item item = new Item(i + 1, moneyValues[i],artisticValues[i], weights[i]);
             items.add(item);
         }
 
@@ -177,12 +190,14 @@ public class BranchAndBound {
 
 class Item implements Comparable<Item> {
     public int index;
-    public int value;
+    public int moneyValue;
+    public int artisticValue;
     public int weight;
 
-    public Item(int index, int value, int weight) {
+    public Item(int index, int moneyValue,int artisticValue, int weight) {
         this.index = index;
-        this.value = value;
+        this.moneyValue = moneyValue;
+        this.artisticValue = artisticValue;
         this.weight = weight;
     }
 
@@ -199,8 +214,10 @@ class Item implements Comparable<Item> {
 class RatioComparator implements Comparator<Item> {
     public int compare(Item a, Item b) {
         float ratioA, ratioB;
-        ratioA = (float)a.value / (float)a.weight;
-        ratioB = (float)b.value / (float)b.weight;
+        float combinedValueA= (a.moneyValue+a.artisticValue)/2;
+        float combinedValueB= (b.moneyValue+b.artisticValue)/2;
+        ratioA = combinedValueA / (float)a.weight;
+        ratioB = combinedValueB / (float)b.weight;
         if (ratioA == ratioB)
             return 0;
         else

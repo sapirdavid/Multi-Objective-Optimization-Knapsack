@@ -14,7 +14,7 @@ In each implementation the output contains the list of chosen items, total weigh
 In our project we investigated the differences between the approaches and present the advantages and disadvantages of them, as you can see at the following graph below:
 
 ![uml](
-https://i.postimg.cc/ZRtstrD3/Screenshot-2022-02-20-113847.png
+https://www.linkpicture.com/q/Screen-Shot-2022-02-26-at-11.48.51-AM.png
 )
 
 
